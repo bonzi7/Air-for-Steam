@@ -1,0 +1,12 @@
+Resource/layout/accountmenu.layout {
+
+	styles {
+		AccountMenuStyle { bgcolor=A2Menu }
+	}
+
+	layout {
+		place { control=view_account_button,view_profile_button,view_wallet_button,view_preferences_button align=left margin-left=32 margin-top=12 dir=down height=24 width=max spacing=2 }
+
+		place { control=change_user_button,account_name_label,wallet_amount_label height=0 width=0 }
+	}
+}

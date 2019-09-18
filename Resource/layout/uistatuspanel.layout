@@ -1,0 +1,41 @@
+"Resource/layout/uistatuspanel.layout" {
+
+	styles {
+		CUIStatusPanel { }
+
+		SlimProgressBar {
+			textcolor=none
+			bgcolor=none
+			render_bg {
+				0="image( x0 + 6, y0 - 37, x1, y1, graphics/onfocus/downloads_hover )"
+			}
+		}
+
+		StatusLabel {
+			textcolor=none
+			render_bg {
+				0="image( x0 + 6, y0 + 6, x1, y1, graphics/onfocus/downloads )"
+			}
+		}
+
+		StatusLabel:hover {
+			render_bg {
+				0="image( x0, y0, x1, y1, graphics/onfocus/active_circle )"
+				1="image( x0 + 6, y0 + 6, x1, y1, graphics/onfocus/downloads )"
+			}
+		}
+
+		StatusLabelDim { textcolor=none }
+	}
+
+	layout {
+		//0 height with render offset -y since the progressbar has higher zpos the other items
+		//it does, however make the icon light up when a download is currently in progress
+		place { control=StatusProgressbar align=bottom width=max height=0 }
+
+		//this is the clickable link and is the faded state of the icon
+		place { control=StatusDownloading width=max height=max }
+
+		place { control=StatusComplete,StatusPaused height=0 width=0 }
+	}
+}
